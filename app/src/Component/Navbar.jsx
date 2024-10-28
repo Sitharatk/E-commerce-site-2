@@ -53,7 +53,7 @@ function Navbar() {
 
       <div className="flex items-center space-x-5 text-black">
    
-        <div className="relative hidden sm:block"> 
+        {/* <div className="relative hidden sm:block"> 
           <input
             className="w-40 h-10 px-4 py-2 pr-10 border border-gray-300 rounded-lg shadow-md focus:outline-none"
             placeholder="Search..."
@@ -62,11 +62,11 @@ function Navbar() {
             icon={faSearch}
             className="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-500"
           />
-        </div>
+        </div> */}
 
-        <FontAwesomeIcon className="cursor-pointer text-xl sm:mt-0 mt-1" icon={faShoppingCart} />
-        <FontAwesomeIcon className="cursor-pointer text-xl sm:mt-0 mt-1" icon={faHeart} />
-        <FontAwesomeIcon className="cursor-pointer text-xl sm:mt-0 mt-1" icon={faUser} />
+        <FontAwesomeIcon className="cursor-pointer text-xl sm:mb-3 mt-1" icon={faShoppingCart} />
+        <FontAwesomeIcon className="cursor-pointer text-xl sm:mb-3 mt-1" icon={faHeart} />
+        <FontAwesomeIcon className="cursor-pointer text-xl sm:mb-3 mt-1" icon={faUser} />
       </div>
     </div>
   );

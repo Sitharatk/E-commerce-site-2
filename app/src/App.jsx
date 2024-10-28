@@ -12,6 +12,9 @@ import Footer from './Component/Footer';
 import Collection from './Pages/Collection';
 import Product from './Pages/Product';
 import Catogary from './Pages/Catogary';
+import Cart from './Pages/Cart';
+import Wishlist from './Pages/Wishlist';
+import Orders from './Pages/Orders';
 
 
 
@@ -27,6 +30,9 @@ function App() {
         <Route path='/collection'element={<Collection/>}/>
         <Route path='/category/:category' element={<Catogary/>}/>
         <Route path='/product/:id' element={<Product/>}/>
+        <Route path='/cart' element={<Cart/>}/>
+        <Route path='/wishlist' element={<Wishlist/>}/>
+        <Route path='/orders' element={<Orders/>}/>
       </Routes>
       <Footer/>
     </>

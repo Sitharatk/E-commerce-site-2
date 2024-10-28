@@ -4,7 +4,7 @@ import { faBook } from "@fortawesome/free-solid-svg-icons";
 
 function Footer() {
   return (
-    <div className="bg-gradient-to-r from-orange-300 to-purple-300 sm:h-56 h-96 p-5 mt-9 flex sm:flex-row flex-col items-center justify-evenly text-white shadow-lg">
+    <div className="bg-gradient-to-r from-orange-300 to-purple-300 sm:h-56 h-96 p-5  flex sm:flex-row flex-col items-center justify-evenly text-white shadow-lg">
       <div className="flex-col mb-5 sm:mb-0 mt-5">
         <div className="flex sm:space-x-4 space-x-2">
           <FontAwesomeIcon className="text-white text-3xl" icon={faBook} />

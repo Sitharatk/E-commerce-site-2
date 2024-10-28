@@ -1,11 +1,26 @@
 import { useState, useEffect, useContext } from 'react';
 import { shopContext } from '../Context/ShopContext';
 import { Link } from 'react-router-dom';
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faSearch } from '@fortawesome/free-solid-svg-icons';
 
 
 function Home() {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const {products}=useContext(shopContext)
+  const [search,setSearch]=useState("")
+  const[results,setResults]=useState([])
+
+  const handlechange=(value)=>{
+    setSearch(value)
+
+    const filresults = products.filter((item) =>
+      item.name.toLowerCase().includes(value.toLowerCase())
+    );
+    setResults(filresults);
+  }
+  
+  
   const images = [
     "https://media.istockphoto.com/id/1206481532/photo/close-up-view-of-woman-reading-a-book-in-outdoor-at-park.webp?a=1&b=1&s=612x612&w=0&k=20&c=pLQDf0fRE4csVCqcH8pUVn1EtaBAYAliOFIIRlFV4RE=",
     "https://img.freepik.com/premium-photo/library-with-book-shelf-sign-that-says-word-it_1023064-37994.jpg?w=740",
@@ -33,7 +48,32 @@ function Home() {
 
   return (
     <div>
-      <div className="flex items-center justify-center bg-gradient-to-r from-orange-300 to-purple-300">
+      <div className="flex items-center justify-center bg-gradient-to-r from-orange-300 to-purple-300 ">
+      <div className="absolute top-2 sm:top-28 w-96"> 
+          <input
+            className="w-full h-10 p-4 rounded-full bg-transparent border border-gray-100 focus:outline-none focus:border-orange-500"
+            placeholder="Search..."  onChange={(e)=>handlechange(e.target.value)}
+          />
+          <FontAwesomeIcon
+            icon={faSearch}
+            className="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-700 ml-5"
+          />
+          
+          {search && results.length > 0 && (
+  <div className="absolute mt-2 bg-white shadow-lg rounded-lg w-full max-h-52 overflow-y-auto z-50 border border-gray-200">
+    {results.map((item) => (
+      <Link key={item.id} to={`/product/${item.id}`} className="no-underline">
+        <div className="p-2 hover:bg-orange-200 hover:text-white transition-colors duration-200 text-gray-800 border-b border-gray-200 last:border-none rounded-lg">
+          {item.name}
+        </div>
+      </Link>
+    ))}
+  </div>
+)}
+
+
+        </div>
+        
         <div className="relative w-3/5 h-96 bg-white rounded-lg shadow-lg overflow-hidden mt-16 mb-16">
           <img 
             src={images[currentImageIndex]} 
@@ -86,6 +126,18 @@ function Home() {
           <Link to='/category/Memoir'  className="no-underline">
           <div className="bg-gradient-to-r from-yellow-700 to-amber-700 rounded-lg shadow-md p-4 flex items-center justify-center text-sky-50 transition-transform duration-200 transform hover:scale-105"
           ><p className="text-lg font-bold">Memoir</p>
+          </div></Link>
+          <Link to='/category/Horror'  className="no-underline">
+          <div className="bg-gradient-to-r from-yellow-700 to-amber-700 rounded-lg shadow-md p-4 flex items-center justify-center text-sky-50 transition-transform duration-200 transform hover:scale-105"
+          ><p className="text-lg font-bold">Horror</p>
+          </div></Link>
+          <Link to='/category/Classic'  className="no-underline">
+          <div className="bg-gradient-to-r from-yellow-700 to-amber-700 rounded-lg shadow-md p-4 flex items-center justify-center text-sky-50 transition-transform duration-200 transform hover:scale-105"
+          ><p className="text-lg font-bold">Classic</p>
+          </div></Link>
+          <Link to='/category/Dystopian'  className="no-underline">
+          <div className="bg-gradient-to-r from-yellow-700 to-amber-700 rounded-lg shadow-md p-4 flex items-center justify-center text-sky-50 transition-transform duration-200 transform hover:scale-105"
+          ><p className="text-lg font-bold">Dystopian</p>
           </div></Link>
 
       </div>
@@ -142,7 +194,7 @@ function Home() {
     <div className="w-full border-t border-gray-400"></div>
   </div>
 </div>
-<div>
+<div className='mb-8'>
 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-6 gap-4 px-6">
 {products
   .filter((product)=>product.arrival=="new")

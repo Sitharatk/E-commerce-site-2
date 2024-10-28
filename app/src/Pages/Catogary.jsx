@@ -15,8 +15,8 @@ function Catogary() {
      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-6 gap-4 px-6 ">
 {filteredProducts
   .map((product) => (
-    <Link to={`/product/${product.id}`} key={product.id}>
-    <div key={product.id} className="bg-white rounded-lg shadow-md  overflow-hidden w-48 transition-transform duration-300 hover:scale-105">
+    <Link to={`/product/${product.id}`} key={product.id} className='no-underline'>
+    <div key={product.id} className="bg-white mb-8 rounded-lg shadow-md  overflow-hidden w-48 transition-transform duration-300 hover:scale-105">
       <img src={product.imageUrl} alt={product.name} className="w-full h-48 object-cover" />
       <div className="p-3">
         <p className="font-semibold text-lg text-gray-800">{product.name}</p>
