@@ -709,6 +709,84 @@
         "arrival": "old",
         "review": 110
       }
-    ]
+    ],
+    
+      "users": [
+        {
+          "id": "1",
+          "username": "Hina",
+          "email": "hina@gmail.com",
+          "password": "hhh",
+          "isAdmin": false,
+          "isBlock": true,
+          "cart": [],
+          "order": [
+            
+          ]
+        },
+        {
+          "id": "2",
+          "username": "Ali",
+          "email": "ali@gmail.com",
+          "password": "aaa",
+          "isAdmin": false,
+          "isBlock": true,
+          "cart": [],
+          "order": []
+        },
+        {
+          "id": "3",
+          "username": "Sara",
+          "email": "sara@gmail.com",
+          "password": "sss",
+          "isAdmin": false,
+          "isBlock": false,
+          "cart": [],
+          "order": []
+        },
+        {
+          "id": "4",
+          "username": "John",
+          "email": "john@gmail.com",
+          "password": "jjj",
+          "isAdmin": false,
+          "isBlock": false,
+          "cart": [],
+          "order": []
+        },
+        {
+          "id": "5",
+          "username": "Emma",
+          "email": "emma@gmail.com",
+          "password": "eee",
+          "isAdmin": false,
+          "isBlock": false,
+          "cart": [],
+          "order": []
+        },
+        {
+          "id": "6",
+          "username": "David",
+          "email": "david@gmail.com",
+          "password": "ddd",
+          "isAdmin": false,
+          "isBlock": false,
+          "cart": [],
+          "order": []
+        },
+        {
+          "id": "5c4a",
+          "username": "Sithara",
+          "email": "sithara@gmail.com",
+          "password": "777",
+          "isAdmin": true,
+          "isBlock": false,
+          "cart": [],
+          "order": [
+            
+          ]
+        }
+       
+      ]
   }
   

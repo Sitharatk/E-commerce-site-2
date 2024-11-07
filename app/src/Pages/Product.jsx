@@ -1,12 +1,21 @@
 import React, { useContext, useEffect } from 'react';
-import { useParams } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import { shopContext } from '../Context/ShopContext';
 import { Link } from 'react-router-dom';
+import { addToCart } from '../Slice/CartSlice';
+import { useDispatch } from 'react-redux';
 
 function Product() {
    const { id } = useParams();
    const { products } = useContext(shopContext);
    const product = products.find((item) => item.id === id);
+   const dispatch = useDispatch();
+   const navigate=useNavigate()
+
+   const handleAddToCart = () => {
+      dispatch(addToCart(product));
+      navigate('/cart'); // Navigate to Cart page after adding
+   };
    
    useEffect(() => {
     window.scrollTo(0, 0);
@@ -43,9 +52,9 @@ function Product() {
                <p className="text-gray-600 mb-4">Reviews: {product.review}</p>
 
                <div className="mt-4 flex space-x-4">
-                  <button className="bg-amber-600 hover:bg-amber-700 text-white font-semibold py-2 px-4 rounded-lg shadow-md transition duration-300 ease-in-out">
+                 <Link to='/cart'> <button onClick={handleAddToCart} className="bg-amber-600 hover:bg-amber-700 text-white font-semibold py-2 px-4 rounded-lg shadow-md transition duration-300 ease-in-out">
                      Add to Cart
-                  </button>
+                  </button></Link>
                   <button className="bg-gray-700 hover:bg-gray-800 text-white font-semibold py-2 px-4 rounded-lg shadow-md transition duration-300 ease-in-out">
                      Add to Wishlist
                   </button>

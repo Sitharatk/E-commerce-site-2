@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink ,Link} from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSearch, faShoppingCart, faUser, faBars, faWindowClose, faHeart, faBook } from '@fortawesome/free-solid-svg-icons';
 
@@ -64,7 +64,7 @@ function Navbar() {
           />
         </div> */}
 
-        <FontAwesomeIcon className="cursor-pointer text-xl sm:mb-3 mt-1" icon={faShoppingCart} />
+       <Link to='/cart'> <FontAwesomeIcon className="cursor-pointer text-xl sm:mb-3 mt-1" icon={faShoppingCart} /></Link>
         <FontAwesomeIcon className="cursor-pointer text-xl sm:mb-3 mt-1" icon={faHeart} />
         <FontAwesomeIcon className="cursor-pointer text-xl sm:mb-3 mt-1" icon={faUser} />
       </div>
